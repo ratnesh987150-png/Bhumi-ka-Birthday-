@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Bhumi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body{margin:0;background:black;color:white;text-align:center;font-family:sans-serif;overflow:hidden;}
+    img{width:260px;border-radius:20px;box-shadow:0 0 20px pink;animation:zoom 3s infinite alternate;}
+    h1{color:#ffb6c1;animation:fade 2s infinite alternate;}
+    p{color:#ffc0cb;font-size:18px;}
+    @keyframes zoom{from{transform:scale(1);}to{transform:scale(1.05);}}
+    @keyframes fade{from{opacity:.5;}to{opacity:1;}}
+    .petal{position:fixed;top:-20px;font-size:22px;animation:fall linear infinite;}
+    @keyframes fall{to{transform:translateY(110vh);}}
+  </style>
+</head>
+<body>
+
+<img src="bhumi.jpg">
+<h1>🎂 Happy Birthday Bhumi 🎉</h1>
+<p>From Ratnesh Singh ❤️</p>
+
+<script>
+function createPetal(){
+  const p=document.createElement("div");
+  p.className="petal";
+  p.innerHTML="🌹";
+  p.style.left=Math.random()*100+"vw";
+  p.style.animationDuration=(3+Math.random()*5)+"s";
+  document.body.appendChild(p);
+  setTimeout(()=>p.remove(),8000);
+}
+setInterval(createPetal,300);
+</script>
+
+</body>
+</html>
